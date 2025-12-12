@@ -23,24 +23,42 @@ Estructura del Proyecto:
 
 /libros_gutenberg /tfidf /similitudes
 
-descargar.py TF-IDFV2.py obtener_matriz.py recomienda.py resume.py
+descargar.py 
 
-1.  python3 descargar.py Descarga libros del 1 al 100 desde Project Gutenberg y
+TF-IDFV2.py 
+
+obtener_matriz.py 
+
+recomienda.py 
+
+resume.py
+
+1.  python3 descargar.py
+
+    Descarga libros del 1 al 100 desde Project Gutenberg y
     los guarda en ‘libros_gutenberg/’.
 
-2.  python3 TF-IDFV2.py Procesa todos los libros y calcula TF-IDF manualmente
+3.  python3 TF-IDFV2.py
+
+    Procesa todos los libros y calcula TF-IDF manualmente
     usando PySpark. Guarda los resultados en ‘tfidf/’.
 
-3.  python3 obtener_matriz.py Utiliza los valores TF-IDF para calcular la
+4.  python3 obtener_matriz.py
+
+    Utiliza los valores TF-IDF para calcular la
     similitud coseno entre los libros. Guarda los resultados en
     ‘similitudes/’.
 
-4.  python3 recomienda.py "Libro_27.txt" Recomienda los libros más parecidos a uno dado usando
+5.  python3 recomienda.py "Libro_27.txt"
+
+    Recomienda los libros más parecidos a uno dado usando
     la matriz de similitudes.
 
     #Ejemplo de ejecucion antes del recomienda
 
-6.  python3 resume.py "Libro_27.txt" Genera un resumen simple mostrando las palabras más
+6.  python3 resume.py "Libro_27.txt"
+
+    Genera un resumen simple mostrando las palabras más
     frecuentes (sin stopwords) de un libro específico.
 
     #Ejemplo de ejecucion antes del Genera.
