@@ -1,6 +1,11 @@
 README – Sistema de Procesamiento, Análisis y Recomendación de Libros
 con PySpark
 
+Integrantes en la elaboracion del proyecto:
+    Higuera Avila Cesar
+    Ramirez de la O Josue Alberto
+    Santos Contreras Brian Alejandro
+
 Este proyecto implementa un pipeline completo para:
 
 -   descargar libros de Project Gutenberg,
