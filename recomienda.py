@@ -9,9 +9,6 @@ spark = (
     .getOrCreate()
 )
 
-# ----------------------------------------------------------
-# Si no pasas un argumento: lista los libros disponibles
-# ----------------------------------------------------------
 if len(sys.argv) < 2:
     df = spark.read.parquet("tfidf")
     
@@ -20,9 +17,7 @@ if len(sys.argv) < 2:
         print(" -", row["doc"])
     
 else:
-    # ------------------------------------------------------
-    # si pasas un argumento: recomendar libros parecidos
-    # ------------------------------------------------------
+   
     libro = sys.argv[1]
     df = spark.read.parquet("similitudes")
 
