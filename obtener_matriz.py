@@ -11,9 +11,6 @@ spark = (
     .getOrCreate()
 )
 
-# -------------------------------
-# 1. Buscar carpeta TF-IDF válida
-# -------------------------------
 posibles = ["tfidf", "tfidf_data", "tfidf_ml_data", "tfidf_hibrido"]
 
 ruta_tfidf = None
@@ -31,22 +28,13 @@ if ruta_tfidf is None:
 
 print(f"Usando carpeta TF-IDF encontrada: {ruta_tfidf}\n")
 
-# -------------------------------
-# 2. Cargar TF-IDF (formato de TF-IDFV2.py)
-# -------------------------------
 df = spark.read.parquet(ruta_tfidf)
 
-# -------------------------------
-# 3. Calcular norma por documento
-# -------------------------------
 normas = (
     df.groupBy("doc")
       .agg(F.sqrt(F.sum(F.col("tfidf")**2)).alias("norma"))
 )
 
-# -------------------------------
-# 4. Producto punto entre documentos
-# -------------------------------
 producto = (
     df.alias("a")
       .join(df.alias("b"), F.col("a.word") == F.col("b.word"))
@@ -62,9 +50,6 @@ numerador = (
             .agg(F.sum("dot").alias("dot_product"))
 )
 
-# -------------------------------
-# 5. Unir normas y calcular similitud
-# -------------------------------
 resultado = (
     numerador
     .join(normas.withColumnRenamed("doc", "doc1")
@@ -78,9 +63,6 @@ resultado = resultado.withColumn(
     F.col("dot_product") / (F.col("norma1") * F.col("norma2"))
 ).select("doc1", "doc2", "similitud")
 
-# -------------------------------
-# 6. Guardar resultados
-# -------------------------------
 resultado.write.mode("overwrite").parquet("similitudes")
 
 print("Similitudes calculadas y guardadas en 'similitudes/'\n")
