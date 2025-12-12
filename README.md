@@ -32,11 +32,13 @@ descargar.py TF-IDFV2.py obtener_matriz.py recomienda.py resume.py
     similitud coseno entre los libros. Guarda los resultados en
     ‘similitudes/’.
 
-4.  recomienda.py Recomienda los libros más parecidos a uno dado usando
+4.  recomienda.py "Libro27.txt" Recomienda los libros más parecidos a uno dado usando
     la matriz de similitudes.
+    #Ejemplo de ejecucion antes del recomienda
 
-5.  resume.py Genera un resumen simple mostrando las palabras más
+6.  resume.py "Libro27.txt" Genera un resumen simple mostrando las palabras más
     frecuentes (sin stopwords) de un libro específico.
+    #Ejemplo de ejecucion antes del Genera.
 
 Flujo de Uso: 1. Ejecutar ‘descargar.py’ 2. Ejecutar ‘TF-IDFV2.py’ 3.
 Ejecutar ‘obtener_matriz.py’ 4. Ejecutar ‘recomienda.py’ 5. (Opcional)
