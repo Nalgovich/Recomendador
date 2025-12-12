@@ -51,7 +51,7 @@ Flujo de Uso:
 
 2. Ejecutar ‘TF-IDFV2.py’
   
-3.Ejecutar ‘obtener_matriz.py’ 
+3. Ejecutar ‘obtener_matriz.py’ 
 
 4. Ejecutar ‘recomienda.py’
 
