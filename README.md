@@ -49,19 +49,16 @@ resume.py
     similitud coseno entre los libros. Guarda los resultados en
     ‘similitudes/’.
 
-5.  python3 recomienda.py "Libro_27.txt"
+5.  python3 recomienda.py "Libro_27.txt" #Ejemplo de ejecucion.
 
     Recomienda los libros más parecidos a uno dado usando
     la matriz de similitudes.
 
-    #Ejemplo de ejecucion antes del recomienda
-
-6.  python3 resume.py "Libro_27.txt"
+6.  python3 resume.py "Libro_27.txt" #Ejemplo de ejecucion.
 
     Genera un resumen simple mostrando las palabras más
     frecuentes (sin stopwords) de un libro específico.
 
-    #Ejemplo de ejecucion antes del Genera.
 
 Flujo de Uso: 
 
