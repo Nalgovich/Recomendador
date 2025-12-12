@@ -2,8 +2,11 @@ README – Sistema de Procesamiento, Análisis y Recomendación de Libros
 con PySpark
 
 Integrantes en la elaboracion del proyecto:
-Higuera Avila Cesar,
-Ramirez de la O Josue Alberto,
+
+Higuera Avila Cesar
+
+Ramirez de la O Josue Alberto
+
 Santos Contreras Brian Alejandro
 
 Este proyecto implementa un pipeline completo para:
@@ -42,6 +45,14 @@ descargar.py TF-IDFV2.py obtener_matriz.py recomienda.py resume.py
 
     #Ejemplo de ejecucion antes del Genera.
 
-Flujo de Uso: 1. Ejecutar ‘descargar.py’ 2. Ejecutar ‘TF-IDFV2.py’ 3.
-Ejecutar ‘obtener_matriz.py’ 4. Ejecutar ‘recomienda.py’ 5. (Opcional)
-Ejecutar ‘resume.py’
+Flujo de Uso: 
+
+1. Ejecutar ‘descargar.py’
+
+2. Ejecutar ‘TF-IDFV2.py’
+  
+3.Ejecutar ‘obtener_matriz.py’ 
+
+4. Ejecutar ‘recomienda.py’
+
+5. (Opcional) Ejecutar ‘resume.py’
