@@ -4,7 +4,6 @@ from pyspark.ml.feature import Tokenizer, StopWordsRemover
 import os
 import sys
 
-
 try:
     spark = SparkSession.builder \
         .appName("TFIDF") \
@@ -14,7 +13,6 @@ try:
 except Exception as e:
     print("Error iniciando Spark:", e)
     sys.exit(1)
-
 
 DATA_DIR = "libros_gutenberg"
 
@@ -42,7 +40,6 @@ if not datos:
 
 df = spark.createDataFrame(datos, ["doc", "texto"]).cache()
 
-
 df = df.withColumn(
     "clean",
     F.lower(F.regexp_replace("texto", "[^a-zA-Z0-9\\s]", " "))
@@ -54,14 +51,11 @@ df_words = tokenizer.transform(df)
 remover = StopWordsRemover(inputCol="words", outputCol="filtered")
 df_words = remover.transform(df_words).select("doc", "filtered").cache()
 
-
 df_exp = df_words.withColumn("word", F.explode("filtered"))
-
 
 df_TF = df_exp.groupBy("doc", "word").agg(
     F.count("word").alias("tf")
 )
-
 
 df_DF = df_TF.groupBy("word").agg(
     F.count("doc").alias("df")

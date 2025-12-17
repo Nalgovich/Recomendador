@@ -1,3 +1,4 @@
+
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 import os
@@ -9,6 +10,7 @@ spark = (
     .master("local[*]")
     .getOrCreate()
 )
+
 
 posibles = ["tfidf", "tfidf_data", "tfidf_ml_data", "tfidf_hibrido"]
 
@@ -26,6 +28,7 @@ if ruta_tfidf is None:
     sys.exit(1)
 
 print(f"Usando carpeta TF-IDF encontrada: {ruta_tfidf}\n")
+
 
 df = spark.read.parquet(ruta_tfidf)
 
@@ -49,6 +52,7 @@ numerador = (
             .agg(F.sum("dot").alias("dot_product"))
 )
 
+
 resultado = (
     numerador
     .join(normas.withColumnRenamed("doc", "doc1")
@@ -61,6 +65,7 @@ resultado = resultado.withColumn(
     "similitud",
     F.col("dot_product") / (F.col("norma1") * F.col("norma2"))
 ).select("doc1", "doc2", "similitud")
+
 
 resultado.write.mode("overwrite").parquet("similitudes")
 

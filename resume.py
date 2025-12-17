@@ -4,6 +4,7 @@ import os
 def resumir(archivo):
     ruta = os.path.join("libros_gutenberg", archivo)
 
+
     if not os.path.exists(ruta):
         print(f"No se encontró el archivo: {ruta}")
         return
@@ -31,7 +32,7 @@ def resumir(archivo):
 
     top20 = sorted(frecuencias.items(), key=lambda x: x[1], reverse=True)[:20]
 
-    print(f"\nResumen de {archivo}:")
+    print(f"\nResumen de las palabras más frecuentes de {archivo}:")
     print(", ".join(palabra for palabra, _ in top20))
 
 

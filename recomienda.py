@@ -9,6 +9,7 @@ spark = (
     .getOrCreate()
 )
 
+
 if len(sys.argv) < 2:
     df = spark.read.parquet("tfidf")
     
@@ -17,7 +18,7 @@ if len(sys.argv) < 2:
         print(" -", row["doc"])
     
 else:
-   
+
     libro = sys.argv[1]
     df = spark.read.parquet("similitudes")
 
